@@ -23,13 +23,13 @@ local function SendNodeAnnounce(msgType, count)
     if msgType == "INC" then
         msg = tag .. "INC " .. count .. " " .. node
     elseif msgType == "DEFF" then
-        msg = tag .. node .. " GUARD NEEDED!"
+        msg = tag .. node .. " - GUARD NEEDED!"
     elseif msgType == "ATTACK" then
-        msg = tag .. node .. " ATTACK!"
+        msg = tag .. node .. " - ATTACK!"
     elseif msgType == "OMW" then
-        msg = tag .. node .. " I'M ON MY WAY!"
+        msg = tag .. node .. " - I'M ON MY WAY!"
     elseif msgType == "IAMDEFF" then
-        msg = tag .. node .. " I AM DEFENDING THE POINT."
+        msg = tag .. node .. " - I AM DEFENDING THE POINT."
     end
 
     local chatType = (select(2, GetInstanceInfo()) == "pvp") and "BATTLEGROUND" or "SAY"
@@ -152,3 +152,4 @@ ABG_NodeMenu:SetScript("OnUpdate", function(self)
         self:Hide()
     end
 end)
+
